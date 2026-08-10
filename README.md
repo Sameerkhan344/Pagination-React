@@ -1,16 +1,142 @@
-# React + Vite
+# React Pagination
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple **React.js Pagination** project that demonstrates how to display data in multiple pages. When the user clicks on a pagination button, the application displays a specific range of data, such as **0–10, 10–20, 20–30**, and so on.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Display data in a paginated format
+* Show **10 items per page**
+* Navigate between pages using pagination buttons
+* Dynamically update the displayed data based on the selected page
+* Simple and responsive UI
+* Built using React functional components and hooks
 
-## React Compiler
+## 🛠️ Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React.js
+* JavaScript
+* HTML
+* CSS
+* Vite
 
-## Expanding the Oxlint configuration
+## 📌 How Pagination Works
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The application divides the available data into multiple pages.
+
+For example, if there are 100 items:
+
+| Page | Data   |
+| ---- | ------ |
+| 1    | 0–10   |
+| 2    | 10–20  |
+| 3    | 20–30  |
+| 4    | 30–40  |
+| 5    | 40–50  |
+| ...  | ...    |
+| 10   | 90–100 |
+
+When the user clicks a pagination button, the corresponding set of data is displayed.
+
+## 📂 Project Structure
+
+```text
+Pagination-React/
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone <your-repository-url>
+```
+
+Go to the project directory:
+
+```bash
+cd Pagination-React
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The application will run locally at:
+
+```text
+http://localhost:5173
+```
+
+## 🧠 Learning Goals
+
+This project was created to practice:
+
+* React state management
+* `useState`
+* Array methods
+* Data slicing
+* Event handling
+* Conditional rendering
+* Pagination logic
+* Component-based development
+
+## 📖 Pagination Logic
+
+The basic idea is to calculate which portion of the data should be displayed based on the current page.
+
+```js
+const startIndex = (currentPage - 1) * itemsPerPage;
+const endIndex = startIndex + itemsPerPage;
+
+const currentData = data.slice(startIndex, endIndex);
+```
+
+For example:
+
+```text
+currentPage = 1
+itemsPerPage = 10
+
+startIndex = 0
+endIndex = 10
+
+Result → data 0–10
+```
+
+For page 2:
+
+```text
+currentPage = 2
+
+startIndex = 10
+endIndex = 20
+
+Result → data 10–20
+```
+
+## 🎯 Purpose
+
+The purpose of this project is to understand how pagination works in React and how a large dataset can be divided into smaller sections for better usability and performance.
+
+## 👨‍💻 Author
+
+**Sameer Khan**
+
+Frontend Developer | React.js | Next.js

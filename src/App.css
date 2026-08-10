@@ -1,0 +1,40 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  text-align: center;
+  justify-items: center;
+}
+
+.card {
+  border: 1px solid #000;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.product-container img {
+  width: 200px;
+  height: 150px;
+}
+
+.card p {
+  width: 110px;
+}
+
+.page-number {
+  padding: 2px;
+  /* display: flex; */
+  /* gap: 5px; */
+  margin: 2px;
+}
+
+.active {
+  background-color: red;
+}
